@@ -1,0 +1,45 @@
+<DOCYPE html>
+    <html>
+        <head>
+         
+          <title>Enrolados</title>
+       </head>
+     <body>
+        <h1>Enrolados, filme de 2010</h1>
+          <p>Enrolados é um filme de animação da Disney que conta a história de Rapunzel, uma jovem com longos cabelos mágicos que vive presa em uma torre desde bebê. Curiosa para conhecer o mundo além de sua janela, ela decide fugir com a ajuda de Flynn Rider, um ladrão aventureiro. Juntos, eles embarcam em uma jornada cheia de perigos, descobertas e momentos divertidos. O filme aborda temas como liberdade, coragem e a importância de seguir seus sonhos, tudo isso com muita música e humor.</p>
+</body>
+</html>
+   <style>
+</style>
+<span data-title="Este é um título estilizado">Passe o mouse</span>
+<style>
+    body {
+        margin: 50px;
+        background-color: rgb(201, 134, 245);
+     }
+      .card1{
+        margin:50px;
+        border-radius:15px;
+        background-color:rgb(180, 92, 180);
+        padding-top:20px;
+        padding-bottom:20px;
+        padding-left:20px;
+        padding-right:20px;
+     }
+     
+    
+     .fig{
+    width: 320px;
+    height:160px;
+    border-radius: 15px;
+
+     }
+
+    </style>
+
+   <div class = "card1">
+                   <img src ="enrolados.jpg" alt="img1" class ="fig">
+                
+             
+            </body>
+     </html>
