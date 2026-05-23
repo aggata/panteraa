@@ -12,88 +12,66 @@
             margin: 20px;
         }
 
-        
-        .topo {
-            margin-bottom: 20px;
-        }
-
+      
         .topo a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
 
-   
         .titulo-login {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 25px;
+            margin: 20px 0;
         }
 
         .avatar {
             width: 60px;
             height: 60px;
-            border-radius: 50%; 
+            border-radius: 50%;
             background-color: #a0aab2;
         }
 
-        .titulo-login h2 {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
         
-        .container-login {
+        .caixa-branca {
             background-color: white;
             color: black;
             width: 320px;
             margin: 0 auto; 
-            padding: 30px 25px;
+            padding: 25px;
             border-radius: 25px; 
         }
 
-        
-        .container-login label {
-            display: block;
+       
+        .caixa-branca p {
             font-weight: bold;
             font-size: 18px;
-            margin-bottom: 8px;
-            margin-top: 15px;
+            margin: 15px 0 8px 0;
+        }
+
+       
+        .barra-preta {
+            background-color: black;
+            color: white;
+            height: 40px;
+            border-radius: 20px;
         }
 
         
-        .container-login input {
-            background-color: black;
-            color: white;
-            border: none;
-            width: 100%;
-            height: 40px;
-            border-radius: 20px;
-            padding: 0 15px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        /* Área dos botões */
-        .botoes {
+        .linha-botoes {
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
         }
 
-        
-        .btn {
-            background-color: black;
-            color: white;
-            border: none;
+       
+        .linha-botoes .barra-preta {
             width: 48%;
-            height: 40px;
-            border-radius: 20px;
             font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
         }
     </style>
 </head>
@@ -108,19 +86,19 @@
         <h2>Faça seu login</h2>
     </div>
 
-    <div class="container-login">
-        <form>
-            <label>Login</label>
-            <input type="text">
+    <div class="caixa-branca">
+        
+        <p style="margin-top: 0;">Login</p>
+        <div class="barra-preta"></div>
 
-            <label>Senha</label>
-            <input type="password">
+        <p>Senha</p>
+        <div class="barra-preta"></div>
 
-            <div class="botoes">
-                <button type="button" class="btn">cancelar</button>
-                <button type="submit" class="btn">logar</button>
-            </div>
-        </form>
+        <div class="linha-botoes">
+            <div class="barra-preta">cancelar</div>
+            <div class="barra-preta">logar</div>
+        </div>
+
     </div>
 
 </body>
