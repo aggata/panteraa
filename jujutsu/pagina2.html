@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  
+  <style>
+    body {
+      background-color: black;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+  
+    .cabecalho {
+      display: flex;
+      align-items: center;
+      width: 550px;
+      margin-bottom: 20px;
+    }
+
+    .link-home {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      margin-right: 50px;
+    }
+
+    .perfil-usuario {
+      display: flex;
+      align-items: center;
+    }
+
+    .img-perfil {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .texto-titulo {
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+   
+    .formulario {
+      background-color: white;
+      width: 550px;
+      padding: 40px;
+      border-radius: 35px;
+      box-sizing: border-box;
+    }
+
+    .bloco-input {
+      margin-bottom: 20px;
+    }
+
+    label {
+      color: black;
+      font-size: 30px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+   
+    .caixa-input {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      width: 100%;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 20px;
+      font-size: 18px;
+      box-sizing: border-box;
+    }
+
+    
+    .ver-senha {
+      position: absolute;
+      right: 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .ver-senha img {
+      width: 25px;
+      height: 25px;
+      filter: invert(1); 
+    }
+
+    
+    .grupo-botoes {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .botao {
+      width: 48%;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cabecalho">
+    <span class="link-home">HOME</span>
+    <div class="perfil-usuario">
+      <img class="img-perfil" src="https://mail.google.com/mail/u/0?ui=2&ik=cf2995952f&attid=0.0.5&permmsgid=msg-a:r1974116378351496881&th=19e5609d0fd51a48&view=fimg&fur=ip&permmsgid=msg-a:r1974116378351496881&sz=s0-l75-ft&attbid=ANGjdJ_4rFQrwBguIIpD5sstaLBcVw5IXvBOilCTS1Gwwf0pRyuXg9FKXhxwOOgXqc33YWL3IErHqkMFGLtctF9lxKsV5mDzJvTRdH9504_zwObBtqp_wIohIyixfWM&disp=emb&realattid=ii_mpio1ane8&zw" alt="User">
+      <h1 class="texto-titulo">Faça seu login</h1>
+    </div>
+  </div>
+
+  <div class="formulario">
+    
+    <div class="bloco-input">
+      <label>Login</label>
+      <div class="caixa-input">
+        <input type="text">
+      </div>
+    </div>
+
+    <div class="bloco-input">
+      <label>Senha</label>
+      <div class="caixa-input">
+        <input type="password" id="senhaInput">
+        <button type="button" class="ver-senha" onclick="revelarSenha()">
+          <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Olho">
+        </button>
+      </div>
+    </div>
+
+    <div class="grupo-botoes">
+      <button class="botao">cancelar</button>
+      <button class="botao">logar</button>
+    </div>
+    
+  </div>
+
+  <script>
+    function revelarSenha() {
+      var campo = document.getElementById("senhaInput");
+      
+      if (campo.type === "password") {
+        campo.type = "text";
+      } else {
+        campo.type = "password";
+      }
+    }
+  </script>
+
+</body>
+</html>ss

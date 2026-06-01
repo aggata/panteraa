@@ -1,0 +1,174 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  
+  <style>
+    body {
+      background-color: black;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    
+    .topo {
+      display: flex;
+      align-items: center;
+      width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .foto {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      margin-right: 25px;
+    }
+
+    .titulo {
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    
+    .caixa-principal {
+      background-color: black;
+      width: 450px;
+      padding: 40px;
+      border: 25px solid white; 
+      border-radius: 60px;       
+    }
+
+    .linha {
+      margin-bottom: 20px;
+    }
+
+    label {
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    
+    .area-input {
+      position: relative;
+    }
+
+    input {
+      width: 100%;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 20px;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+   
+    .icone-olho {
+      position: absolute;
+      right: 15px;
+      top: 13px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .icone-olho img {
+      width: 26px;
+      height: 26px;
+    }
+
+    
+    .area-botoes {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 35px;
+    }
+
+    .btn {
+      width: 43%;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 20px;
+      padding: 14px;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topo">
+    <img class="foto" src="https://mail.google.com/mail/u/0?ui=2&ik=cf2995952f&attid=0.0.5&permmsgid=msg-a:r1974116378351496881&th=19e5609d0fd51a48&view=fimg&fur=ip&permmsgid=msg-a:r1974116378351496881&sz=s0-l75-ft&attbid=ANGjdJ_4rFQrwBguIIpD5sstaLBcVw5IXvBOilCTS1Gwwf0pRyuXg9FKXhxwOOgXqc33YWL3IErHqkMFGLtctF9lxKsV5mDzJvTRdH9504_zwObBtqp_wIohIyixfWM&disp=emb&realattid=ii_mpio1ane8&zw" alt="User">
+    <h1 class="titulo">Faça seu cadastro</h1>
+  </div>
+
+  <div class="caixa-principal">
+    
+    <div class="linha">
+      <label>Login</label>
+      <div class="area-input">
+        <input type="text">
+      </div>
+    </div>
+
+    <div class="linha">
+      <label>Senha</label>
+      <div class="area-input">
+        <input type="password" id="campoSenha">
+        <button type="button" class="icone-olho" onclick="mostrar()">
+          <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Olho">
+        </button>
+      </div>
+    </div>
+
+    <div class="linha">
+      <label>Nome</label>
+      <div class="area-input">
+        <input type="text">
+      </div>
+    </div>
+
+    <div class="linha">
+      <label>Email</label>
+      <div class="area-input">
+        <input type="email">
+      </div>
+    </div>
+
+    <div class="area-botoes">
+      <button class="btn">cancelar</button>
+      <button class="btn">cadastrar</button>
+    </div>
+    
+  </div>
+
+  <script>
+    function mostrar() {
+      var x = document.getElementById("campoSenha");
+      
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
+
+</body>
+</html>
