@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Fake</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=zalando-sans@400,700&f[]=misto@400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-logo: 'Merriweather', serif;
+            --font-titulo: 'Yeseva One', cursive, serif;
+            --font-texto-maior: 'Vollkorn', serif;
+            --font-texto-menor: 'Misto', sans-serif, system-ui;
+            --font-titulo-jogo: 'Zalando Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #1b365d;
+            font-family: var(--font-texto-maior);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-logo);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #4376b8;
+        }
+
+        .logo-box {
+            font-family: var(--font-logo);
+            font-weight: bold;
+            font-size: 1.6rem;
+            color: #4376b8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-family: var(--font-texto-maior);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #4376b8;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr 1.2fr;
+            gap: 30px;
+            align-items: center;
+            padding: 20px 0 30px 0;
+        }
+
+        .hero-left h1 {
+            font-family: var(--font-titulo);
+            font-size: 1.7rem;
+            color: #1b365d;
+            line-height: 1.15;
+            margin-bottom: 12px;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .hero-left h1 span {
+            color: #4376b8;
+        }
+
+        .hero-left p {
+            font-family: var(--font-texto-maior);
+            font-size: 0.85rem;
+            color: #2d3748;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .btn-saiba-mais {
+            background-color: #4376b8;
+            color: white;
+            padding: 6px 16px;
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-texto-maior);
+            font-size: 0.75rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-center {
+            text-align: center;
+        }
+
+        .hero-center img {
+            max-width: 230px;
+            width: 100%;
+        }
+
+        .hero-right h3 {
+            font-family: var(--font-titulo);
+            color: #4376b8;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .hero-right > p {
+            font-family: var(--font-texto-maior);
+            font-size: 0.82rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+            line-height: 1.35;
+        }
+
+        .ods-card-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #eef5fc;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .ods-card-top img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .ods-card-top strong {
+            display: block;
+            font-family: var(--font-titulo);
+            font-size: 0.68rem;
+            color: #4376b8;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        .ods-card-top p {
+            font-family: var(--font-texto-maior);
+            font-size: 0.65rem;
+            margin: 0;
+            color: #4a5568;
+            line-height: 1.25;
+        }
+
+        .verifique-section {
+            background-color: transparent;
+            padding: 20px 0 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .verifique-title {
+            font-family: var(--font-titulo);
+            color: #4376b8;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .verifique-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            align-items: stretch;
+        }
+
+        .verifique-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 12px;
+            border-right: 3px solid #cbdcf7;
+            text-align: left;
+        }
+
+        .verifique-item:first-child {
+            padding-left: 0;
+        }
+
+        .verifique-item:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .verifique-item img {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .verifique-item-text strong {
+            display: block;
+            font-family: var(--font-texto-maior);
+            font-size: 0.72rem;
+            color: #4376b8;
+            margin-bottom: 2px;
+            font-weight: 600;
+        }
+
+        .verifique-item-text p {
+            font-family: var(--font-texto-maior);
+            font-size: 0.68rem;
+            color: #2d3748;
+            line-height: 1.25;
+        }
+
+        .info-dupla {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .info-dupla::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 90%;
+            background-color: #ebf8ff;
+        }
+
+        .info-card {
+            padding: 10px 0;
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .info-card-header img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+        }
+
+        .info-card-header h2 {
+            font-family: var(--font-titulo);
+            color: #4376b8;
+            font-size: 1.15rem;
+            font-weight: normal;
+        }
+
+        .info-card p {
+            font-family: var(--font-texto-maior);
+            color: #4a5568;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .espalha-container {
+            background-color: #eef5fc;
+            border-radius: 16px;
+            padding: 30px 40px;
+            margin-bottom: 50px;
+        }
+
+        .espalha-header {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .espalha-header h2 {
+            font-family: var(--font-titulo);
+            color: #4376b8;
+            font-size: 1.4rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+
+        .espalha-header p {
+            font-family: var(--font-texto-maior);
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .espalha-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            align-items: stretch;
+        }
+
+        .espalha-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-right: 15px;
+            padding-left: 15px;
+            border-right: 3px solid #cbdcf7;
+        }
+
+        .espalha-item:first-child {
+            padding-left: 0;
+        }
+
+        .espalha-item:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .espalha-item img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .espalha-item h4 {
+            font-family: var(--font-texto-maior);
+            color: #4376b8;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .espalha-item p {
+            font-family: var(--font-texto-maior);
+            font-size: 0.8rem;
+            color: #2d3748;
+            line-height: 1.3;
+        }
+
+        .banner-jogo {
+            background-color: #1b365d;
+            color: white;
+            padding: 16px 20px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 480px;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .banner-jogo h2 {
+            font-family: var(--font-titulo-jogo);
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .banner-jogo p {
+            font-family: var(--font-texto-maior);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .banner-jogo button {
+            background-color: #ffffff;
+            color: #1b365d;
+            border: none;
+            padding: 6px 20px;
+            border-radius: 15px;
+            font-family: var(--font-texto-menor);
+            font-size: 0.72rem;
+            cursor: pointer;
+        }
+
+        #game-container {
+            display: none;
+            margin-bottom: 40px;
+        }
+
+        .game-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .card-pergunta {
+            background-color: #1b365d;
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-pergunta h3 {
+            font-family: var(--font-titulo-jogo);
+            color: #90cdf4;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .card-pergunta p {
+            font-family: var(--font-texto-maior);
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .btn-ans {
+            flex: 1;
+            padding: 6px;
+            border: 1px solid #ffffff;
+            border-radius: 15px;
+            background-color: transparent;
+            color: white;
+            font-family: var(--font-texto-menor);
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        .btn-ans:hover {
+            background-color: #ffffff;
+            color: #1b365d;
+        }
+
+        .card-resposta {
+            background-color: #ebf8ff;
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .resposta-content h3 {
+            font-family: var(--font-titulo);
+            color: #2b6cb0;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            font-weight: normal;
+        }
+
+        .badge-status {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: #63b3ed;
+            color: white;
+            border-radius: 10px;
+            font-family: var(--font-texto-menor);
+            font-size: 0.68rem;
+            margin-bottom: 6px;
+        }
+
+        .justificativa-texto {
+            display: none;
+            font-family: var(--font-texto-maior);
+            font-size: 0.8rem;
+            color: #2d3748;
+            line-height: 1.3;
+        }
+
+        .card-resposta img {
+            width: 50px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .btn-reiniciar {
+            width: 100%;
+            padding: 10px;
+            background-color: #4376b8;
+            color: white;
+            font-family: var(--font-texto-menor);
+            font-size: 0.8rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .entenda-block {
+            margin-bottom: 50px;
+        }
+
+        .entenda-block h3 {
+            text-align: center;
+            font-family: var(--font-titulo);
+            color: #4376b8;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: normal;
+            letter-spacing: 0.5px;
+        }
+
+        .entenda-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: stretch;
+        }
+
+        .entenda-card {
+            text-align: left;
+            background-color: transparent;
+            padding: 0 20px;
+            border-right: 3px solid #cbdcf7;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .entenda-card:first-child {
+            padding-left: 0;
+        }
+
+        .entenda-card:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .entenda-card img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .entenda-card h4 {
+            font-family: var(--font-titulo);
+            color: #4376b8;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .entenda-card p {
+            font-family: var(--font-texto-maior);
+            font-size: 0.8rem;
+            color: #2d3748;
+            line-height: 1.4;
+        }
+
+        .entenda-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .entenda-card ul li {
+            font-family: var(--font-texto-maior);
+            font-size: 0.8rem;
+            color: #2d3748;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .entenda-card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2d3748;
+        }
+
+        .poder-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #eef5fc;
+            padding: 25px 35px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+
+        .poder-img-left {
+            width: 130px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .poder-text {
+            text-align: center;
+            max-width: 450px;
+        }
+
+        .poder-text h3 {
+            font-family: var(--font-titulo);
+            color: #4376b8;
+            font-size: 1.1rem;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .poder-text p {
+            font-family: var(--font-texto-maior);
+            color: #4a5568;
+            font-size: 0.82rem;
+            line-height: 1.3;
+        }
+
+        .poder-img-right {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 20px 0;
+            background-color: #ffffff;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-icon-img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        .footer-item p {
+            font-family: var(--font-texto-maior);
+            color: #2d3748;
+            font-size: 0.75rem;
+        }
+
+        .footer-center p {
+            font-family: var(--font-texto-maior);
+            color: #2d3748;
+            font-size: 0.75rem;
+        }
+
+        .footer-ods {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-ods img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .hero, .info-dupla, .game-row {
+                grid-template-columns: 1fr;
+            }
+            .info-dupla::after {
+                display: none;
+            }
+            .verifique-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .verifique-item {
+                border-right: none;
+                border-bottom: 2px solid #cbdcf7;
+                padding: 0 0 12px 0;
+            }
+            .verifique-item:last-child {
+                border-bottom: none;
+            }
+            .espalha-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .espalha-item {
+                border-right: none;
+                border-bottom: 2px solid #cbdcf7;
+                padding: 0 0 15px 0;
+            }
+            .espalha-item:last-child {
+                border-bottom: none;
+            }
+            .entenda-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .entenda-card {
+                border-right: none;
+                border-bottom: 2px solid #cbdcf7;
+                padding: 0 0 20px 0;
+            }
+            .entenda-card:last-child {
+                border-bottom: none;
+            }
+            .poder-block {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="inicio">
+
+        <nav>
+            <div class="logo">
+                <span class="logo-box">PF</span> Portal Fake
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">INÍCIO</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#o-que-sao">FAKE NEWS</a></li>
+                <li><a href="#ods">ODS 16 & 17</a></li>
+                <li><a href="#entenda">DICAS</a></li>
+                <li><a href="#jogo-anchor" onclick="abrirJogo()">JOGOS</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero" id="sobre">
+            <div class="hero-left">
+                <h1>INFORMAÇÃO<br><span>VERDADEIRA</span><br>TRANSFORMA</h1>
+                <p>Fake News ameaçam direitos, prejudicam decisões e enfraquecem a democracia. Verificar é simples, compartilhar com responsabilidade é essencial.</p>
+                <a href="#o-que-sao" class="btn-saiba-mais">saiba mais</a>
+            </div>
+
+            <div class="hero-center">
+                <img src="celular.png" alt="Notícia Fake News">
+            </div>
+
+            <div class="hero-right" id="ods">
+                <h3>NOSSO FOCO</h3>
+                <p>A informação de qualidade promove paz, justiça e instituições eficazes (ODS 16) e fortalece parcerias para alcançar os objetivos (ODS 17).</p>
+
+                <div class="ods-card-top">
+                    <img src="od16.png" alt="ODS 16">
+                    <div>
+                        <strong>PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES</strong>
+                        <p>Promover sociedades pacíficas e inclusivas, garantir o acesso à justiça e construir instituições responsáveis e transparentes.</p>
+                    </div>
+                </div>
+
+                <div class="ods-card-top">
+                    <img src="od 17.png" alt="ODS 17">
+                    <div>
+                        <strong>PARCERIAS E MEIOS DE IMPLEMENTAÇÃO</strong>
+                        <p>Fortalecer os meios de implementação e revitalizar a parceria global para o desenvolvimento sustentável.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="verifique-section">
+        <div class="container">
+            <div class="verifique-title">ANTES DE COMPARTILHAR, VERIFIQUE:</div>
+            <div class="verifique-grid">
+                <div class="verifique-item">
+                    <img src="pessoa.png" alt="Quem publicou?">
+                    <div class="verifique-item-text">
+                        <strong>Quem publicou?</strong>
+                        <p>Verifique a fonte e o autor da informação.</p>
+                    </div>
+                </div>
+
+                <div class="verifique-item">
+                    <img src="lupa.png" alt="É confiável?">
+                    <div class="verifique-item-text">
+                        <strong>É confiável?</strong>
+                        <p>Pesquise em outros veículos e fontes oficiais.</p>
+                    </div>
+                </div>
+
+                <div class="verifique-item">
+                    <img src="calendario.png" alt="Quando foi publicado?">
+                    <div class="verifique-item-text">
+                        <strong>Quando foi publicado?</strong>
+                        <p>Informações antigas podem ser compartilhadas fora de contexto.</p>
+                    </div>
+                </div>
+
+                <div class="verifique-item">
+                    <img src="imagem.png" alt="É sensacionalista?">
+                    <div class="verifique-item-text">
+                        <strong>É sensacionalista?</strong>
+                        <p>Títulos exagerados podem distorcer a realidade.</p>
+                    </div>
+                </div>
+
+                <div class="verifique-item">
+                    <img src="partilhar.png" alt="Compartilhe">
+                    <div class="verifique-item-text">
+                        <strong>Compartilhe com responsabilidade!</strong>
+                        <p>Você também faz parte da solução.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <section class="info-dupla" id="o-que-sao">
+            <div class="info-card">
+                <div class="info-card-header">
+                    <img src="auto.png" alt="Notícia">
+                    <h2>O QUE SÃO FAKE NEWS?</h2>
+                </div>
+                <p>Fake News são informações falsas ou enganosas divulgadas como se fossem verdadeiras, podendo causar desordem e influenciar opiniões. O Portal Fake ajuda você a entender como elas se espalham, reconhecer seus sinais e aprender a verificar informações antes de compartilhar.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-header">
+                    <img src="alvo.png" alt="Objetivo">
+                    <h2>NOSSO OBJETIVO</h2>
+                </div>
+                <p>O objetivo do Portal Fake é combater a desinformação, estimulando o foco crítico e a leitura de notícias reais e verdades na rede. Queremos incentivar o pensamento crítico e o compartilhamento responsável de informações na internet.</p>
+            </div>
+        </section>
+
+        <section class="espalha-container" id="espalham">
+            <div class="espalha-header">
+                <h2>COMO UMA FAKE NEWS SE ESPALHA?</h2>
+                <p>É mais rápido do que parece. Veja o passo a passo:</p>
+            </div>
+
+            <div class="espalha-grid">
+                <div class="espalha-item">
+                    <img src="lapis.png" alt="Criação">
+                    <h4>Criação</h4>
+                    <p>Alguém produz a informação falsa.</p>
+                </div>
+
+                <div class="espalha-item">
+                    <img src="compartilha.png" alt="Compartilhamento">
+                    <h4>Compartilhamento</h4>
+                    <p>É enviada por redes sociais, grupos e sites.</p>
+                </div>
+
+                <div class="espalha-item">
+                    <img src="internet.png" alt="Viralização">
+                    <h4>Viralização</h4>
+                    <p>Ganha força e chega a mais pessoas.</p>
+                </div>
+
+                <div class="espalha-item">
+                    <img src="pessoas.png" alt="Pessoas acreditam">
+                    <h4>Pessoas acreditam</h4>
+                    <p>Muitas vezes, sem verificar a fonte.</p>
+                </div>
+
+                <div class="espalha-item">
+                    <img src="alerta.png" alt="Consequências">
+                    <h4>Consequências</h4>
+                    <p>Gera desinformação, confusão e prejuízos para a sociedade.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="banner-jogo" id="jogo-anchor">
+            <h2>JOGO: É FATO OU FAKE?</h2>
+            <p>Responda a 4 perguntas e teste seus conhecimentos sobre desinformação.</p>
+            <button onclick="abrirJogo()">JOGAR</button>
+        </div>
+
+        <section id="game-container">
+            <div class="game-row">
+                <div class="card-pergunta">
+                    <div>
+                        <h3>É FATO OU FAKE?</h3>
+                        <p>Checar o autor de uma matéria ajuda a confirmar se ela é confiável.</p>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-ans" onclick="responder(1, true)">FATO</button>
+                        <button class="btn-ans" onclick="responder(1, false)">FAKE</button>
+                    </div>
+                </div>
+                <div class="card-resposta">
+                    <div class="resposta-content">
+                        <h3>JUSTIFICATIVA</h3>
+                        <span class="badge-status" id="status1">RESPONDA</span>
+                        <p class="justificativa-texto" id="just1">Saber quem escreveu o conteúdo e suas credenciais é fundamental para avaliar a credibilidade da notícia.</p>
+                    </div>
+                    <img src="lupa.png" alt="Lupa">
+                </div>
+            </div>
+
+            <div class="game-row">
+                <div class="card-pergunta">
+                    <div>
+                        <h3>É FATO OU FAKE?</h3>
+                        <p>Títulos muito alarmistas e sensacionalistas costumam indicar conteúdos suspeitos.</p>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-ans" onclick="responder(2, true)">FATO</button>
+                        <button class="btn-ans" onclick="responder(2, false)">FAKE</button>
+                    </div>
+                </div>
+                <div class="card-resposta">
+                    <div class="resposta-content">
+                        <h3>JUSTIFICATIVA</h3>
+                        <span class="badge-status" id="status2">RESPONDA</span>
+                        <p class="justificativa-texto" id="just2">A desinformação costuma apelar para emoções fortes para atrair cliques e compartilhamentos rápidos.</p>
+                    </div>
+                    <img src="lupa.png" alt="Lupa">
+                </div>
+            </div>
+
+            <div class="game-row">
+                <div class="card-pergunta">
+                    <div>
+                        <h3>É FATO OU FAKE?</h3>
+                        <p>Conferir a data de uma publicação ajuda a descobrir se uma informação está desatualizada.</p>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-ans" onclick="responder(3, true)">FATO</button>
+                        <button class="btn-ans" onclick="responder(3, false)">FAKE</button>
+                    </div>
+                </div>
+                <div class="card-resposta">
+                    <div class="resposta-content">
+                        <h3>JUSTIFICATIVA</h3>
+                        <span class="badge-status" id="status3">RESPONDA</span>
+                        <p class="justificativa-texto" id="just3">Uma notícia antiga pode voltar a circular fora de contexto. Por isso, verificar a data é importante.</p>
+                    </div>
+                    <img src="lupa.png" alt="Lupa">
+                </div>
+            </div>
+
+            <div class="game-row">
+                <div class="card-pergunta">
+                    <div>
+                        <h3>É FATO OU FAKE?</h3>
+                        <p>Verificar uma notícia em diferentes fontes pode ajudar a confirmar se ela é verdadeira.</p>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-ans" onclick="responder(4, true)">FATO</button>
+                        <button class="btn-ans" onclick="responder(4, false)">FAKE</button>
+                    </div>
+                </div>
+                <div class="card-resposta">
+                    <div class="resposta-content">
+                        <h3>JUSTIFICATIVA</h3>
+                        <span class="badge-status" id="status4">RESPONDA</span>
+                        <p class="justificativa-texto" id="just4">Comparar uma informação com fontes confiáveis pode revelar erros, informações fora de contexto ou conteúdos falsos.</p>
+                    </div>
+                    <img src="lupa.png" alt="Lupa">
+                </div>
+            </div>
+
+            <button class="btn-reiniciar" onclick="reiniciarJogo()">REINICIAR JOGO</button>
+        </section>
+
+        <section class="entenda-block" id="entenda">
+            <h3>ENTENDA MAIS SOBRE FAKE NEWS:</h3>
+
+            <div class="entenda-grid">
+                <div class="entenda-card">
+                    <img src="noticia.png.png" alt="O que são?">
+                    <h4>O QUE SÃO?</h4>
+                    <p>Fake news são informações falsas ou enganosas divulgadas como se fossem verdadeiras, criadas para enganar, manipular ou causar confusão.</p>
+                </div>
+
+                <div class="entenda-card">
+                    <img src="compartilha.png" alt="Onde circulam?">
+                    <h4>ONDE CIRCULAM?</h4>
+                    <ul>
+                        <li>Redes sociais</li>
+                        <li>Aplicativos de mensagem</li>
+                        <li>Sites falsos ou suspeitos</li>
+                        <li>Vídeos e áudios manipulados</li>
+                    </ul>
+                </div>
+
+                <div class="entenda-card">
+                    <img src="pense.png" alt="Por que existem?">
+                    <h4>POR QUE EXISTEM?</h4>
+                    <p>Podem gerar cliques, dinheiro, poder ou influência. Muitas vezes, exploram emoções como medo, raiva e indignação para se espalhar mais rápido.</p>
+                </div>
+
+                <div class="entenda-card">
+                    <img src="seguranca.png" alt="Qual impacto?">
+                    <h4>QUAL IMPACTO?</h4>
+                    <p>Prejudicam a sociedade, afetam decisões importantes, destroem reputações e enfraquecem a democracia e a confiança nas instituições.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="poder-block">
+            <img src="falar.png" class="poder-img-left" alt="Pessoas conversando">
+
+            <div class="poder-text">
+                <h3>INFORMAÇÃO É PODER.<br>VERDADE É RESPONSABILIDADE.</h3>
+                <p>Seja parte da mudança. Informe-se, verifique e compartilhe apenas o que for verdadeiro</p>
+            </div>
+
+            <img src="verificado.png" class="poder-img-right" alt="Verificado">
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-item">
+                    <img src="seguranca.png" class="footer-icon-img" alt="Escudo">
+                    <p>Informação de qualidade<br>constrói um mundo melhor.</p>
+                </div>
+
+                <div class="footer-center">
+                    <p>© 2026 Portal Fake. Todos os direitos reservados.</p>
+                </div>
+
+                <div class="footer-ods">
+                    <img src="od16.png" alt="ODS 16">
+                    <img src="od 17.png" alt="ODS 17">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let respostas = {};
+
+        const respostasCertas = {
+            1: true,
+            2: true,
+            3: true,
+            4: true
+        };
+
+        function abrirJogo() {
+            const jogo = document.getElementById("game-container");
+            jogo.style.display = "block";
+            jogo.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+
+        function responder(numero, resposta) {
+            respostas[numero] = resposta;
+
+            const status = document.getElementById("status" + numero);
+            const justificativa = document.getElementById("just" + numero);
+
+            justificativa.style.display = "block";
+
+            if (resposta === respostasCertas[numero]) {
+                status.textContent = "ACERTOU!";
+                status.style.backgroundColor = "#38a169";
+            } else {
+                status.textContent = "ERROU!";
+                status.style.backgroundColor = "#e53e3e";
+            }
+        }
+
+        function reiniciarJogo() {
+            respostas = {};
+
+            for (let i = 1; i <= 4; i++) {
+                const status = document.getElementById("status" + i);
+                const justificativa = document.getElementById("just" + i);
+
+                if (status && justificativa) {
+                    status.textContent = "RESPONDA";
+                    status.style.backgroundColor = "#63b3ed";
+                    justificativa.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
